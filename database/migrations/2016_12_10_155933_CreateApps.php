@@ -18,7 +18,7 @@ class CreateApps extends Migration
             $table->bigIncrements("id");
             $table->softDeletes();
             $table->timestamps();
-            $table->string("name",32)->comment("应用的名字");
+            $table->string("name",128)->comment("应用的名字");
         });
         Schema::create("groups",function(Blueprint $table){
             $table->bigIncrements("id");
@@ -26,7 +26,7 @@ class CreateApps extends Migration
             $table->timestamps();
 
             $table->bigInteger("app_id")->comment("应用的名字");
-            $table->string("name",32)->comment("组的名字");
+            $table->string("name",128)->comment("组的名字");
 
         });
         Schema::create("variables",function(Blueprint $table){
@@ -35,7 +35,7 @@ class CreateApps extends Migration
             $table->timestamps();
 
             $table->bigInteger("app_id")->comment("应用的id");
-            $table->string("name",32)->comment("变量名字");
+            $table->string("name",255)->comment("变量名字");
 
         });
 
