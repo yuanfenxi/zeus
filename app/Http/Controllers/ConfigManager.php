@@ -28,6 +28,15 @@ class ConfigManager extends Controller
     public function addApp(Request $request){
         return view("config.app.create");
     }
+
+    public function appUpdateEnv(Request $request,$appName,$groupName){
+        return view("config.app.update",['appName'=>$appName,'groupName'=>$groupName]);
+    }
+
+    public function appUpdateEnvPost(Request $request,$appName,$groupName){
+        return $request->all();
+    }
+    
     public function postAddApp(Request $request){
         DB::beginTransaction();
         try{
@@ -75,34 +84,7 @@ class ConfigManager extends Controller
     }
 
     public function appEnv(Request $request,$appName,$groupName){
-
-        $app = App::where("name",$appName)->first();
-        if(!$app){
-            $response =new Response();
-            $response->setStatusCode(Response::HTTP_NOT_FOUND,"error:app $appName not found");
-            return $response;
-        }
-        $group= Group::where("name",$groupName)->first();
-        if(!$group){
-            $response =new Response();
-            $response->setStatusCode(Response::HTTP_NOT_FOUND,"error:group $groupName not found");
-            return $response;
-        }
-
-        $values = Value::where("app_id",$app->id)->where("group_id",$group->id)->get();
-        $res = [];
-        foreach($values as $value){
-            $res[$value->variable->name] = $value->value;
-        }
-        $lines = [];
-        foreach($res as $k=>$v){
-            if(strpos($v, "'")!==false){
-                $lines[] = $k."=".'"'.$v.'"';
-            }else{
-                $lines[] = $k."="."'$v'";
-            }
-        }
-        return join("\n",$lines);
+        return App::buildEnv($appName, $groupName);
     }
 
 }

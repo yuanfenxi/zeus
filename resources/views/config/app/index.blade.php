@@ -13,7 +13,13 @@
             {{$app->name}}
         </td>
         <td>
-            <a href="{{route('app-view',['id'=>$app->id])}}">view</a>
+            <?php foreach($app->groups as $group){?>
+            <a href="{{route('app-update',['appName'=>$app->name,'groupName'=>$group->name])}}">view {{$group->name}} env</a>
+
+            <?php } ?>
+        </td>
+        <td>
+            <a href="{{route('app-view',['id'=>$app->id])">view</a>
         </td>
     </tr>
 <?php }?>

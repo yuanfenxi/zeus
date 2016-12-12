@@ -73,6 +73,7 @@ class ZeusLoadEnvFile extends Command
         $envHelper = new EnvHelper($file);
         $envHelper->load();
         $config = $envHelper->getConfig();
+
         foreach($config as $k=>$v){
             $variable = Variable::where("app_id",$app->id)->where("name",$k)->first();
             if(empty($variable)){

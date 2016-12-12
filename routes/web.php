@@ -20,7 +20,8 @@ Route::group(["prefix" => "config"], function () {
     Route::get("/app/v-{id}", 'ConfigManager@apps')->name("app-view");
     Route::get("/app/vars-{appId}-{groupId}", 'ConfigManager@appVars')->name("app-vars");
     Route::get("/env/app-{appName}-group-{groupName}", 'ConfigManager@appEnv')->name("app-env");
-
+    Route::get("/app/update-{appName}-{groupName}", 'ConfigManager@appUpdateEnv')->name("app-update");
+    Route::post("/app/update-{appName}-{groupName}", 'ConfigManager@appUpdateEnvPost')->name("app-post-update");
     Route::get("/app/add", 'ConfigManager@addApp')->name("app-add");
     Route::post("/app/add", 'ConfigManager@postAddApp')->name("app-post-add");
 });
