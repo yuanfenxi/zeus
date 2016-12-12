@@ -6,7 +6,7 @@
  * Time: 上午12:22
  */
 ?>
-<a href="{{route('app-add')">Add</a>
+<a href="{{route('app-add')}}">Add</a>
 <table class="table table-responsive table-striped table-bordered">
 <?php foreach($apps as $app){?>
     <tr>
