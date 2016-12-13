@@ -95,6 +95,17 @@ class Deploy
         }
         return $output;
     }
+    public function updateEnv($app,$group){
+        $envContent = App::buildEnv($app->name, $group->name);
+        if(!$envContent){
+            throw new \Exception('cant build app .env file content');
+        }
+
+        if (!file_put_contents($group->deployPath . "/.env", $envContent)) {
+            throw new \Exception('create .env file failed');
+        }
+        return $envContent;
+    }
     public function normalize($path)
     {
         return rtrim($path, "/\\");
