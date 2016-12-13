@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Console\Commands;
+
+use App\Model\App;
+use App\Model\Group;
+use Illuminate\Console\Command;
+
+class RollbackProject extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'zeus:rollback  {app : app name} {group : group name}';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Command description';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        $appName = $this->argument("app");
+        $groupName = $this->argument("group");
+        if(empty($appName)){
+            $this->error("app can't be null");
+            return;
+        }
+        if(empty($groupName)){
+            $this->error("group can't be null");
+            return;
+        }
+        $app = App::where("name",$appName)->first();
+        if(empty($app)){
+            $this->error("app ".$appName." can't found");
+            return;
+        }
+        $group = Group::where("name",$groupName)->where("app_id",$app->id)->first();
+        if(empty($group)){
+            $this->error("group ".$groupName." of app:".$appName." can't found");
+            return;
+        }
+        $this->rollbackApp($app, $group);
+    }
+    public function rollbackApp($app, $group)
+    {
+        $codeBase = $group->codeBase;
+        $appName = $app->name;
+        $codeBase = $this->normalize($codeBase);
+        if (!file_exists($codeBase . "/$appName")) {
+            mkdir($codeBase . "/$appName",0755,true);
+        }
+        $last = $this->normalize($codeBase . "/" . $appName . "/last");
+        if (!file_exists($last)) {
+            throw new \Exception('path:' . $last . " not exists");
+        }
+        $deployPath = $this->normalize($group->deployPath);
+        if(!rename($deployPath,$deployPath."-".$group->version)){
+            throw new \Exception("move failed;");
+        }
+        if (!rename($last."/", $group->deployPath."/")) {
+            throw new \Exception(' rollback deploy failed');
+        }
+    }
+    public function normalize($path)
+    {
+        return rtrim($path, "/\\");
+    }
+}

@@ -23,7 +23,7 @@ class App extends Model
             return $response;
         }
 
-        $group = Group::where("name", $groupName)->first();
+        $group = Group::where("name", $groupName)->where("app_id",$app->id)->first();
         if (!$group) {
             $response = new Response();
             $response->setStatusCode(Response::HTTP_NOT_FOUND, "error:group $groupName not found");
@@ -31,6 +31,7 @@ class App extends Model
         }
 
         $values = Value::where("app_id", $app->id)->where("group_id", $group->id)->get();
+        //return $group->toArray();
         $res = [];
         foreach ($values as $value) {
             $res[$value->variable->name] = $value->value;

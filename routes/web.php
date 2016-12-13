@@ -17,7 +17,12 @@ Route::get('/', function () {
 
 Route::group(["prefix" => "config"], function () {
     Route::get("/apps", 'ConfigManager@apps')->name("apps");
-    Route::get("/app/v-{id}", 'ConfigManager@apps')->name("app-view");
+    Route::get("/app/v-{id}", 'ConfigManager@appView')->name("app-view");
+    Route::get("/app/e-{id}", 'ConfigManager@appEdit')->name("app-edit");
+    Route::get("/group/v-{id}",'ConfigManager@groupView')->name("group-view");
+    Route::get('/group/e-{id}','ConfigManager@groupEdit')->name("group-edit");
+    Route::post('/group/e-{id}','ConfigManager@groupPostEdit')->name("group-post-edit");
+    Route::post("/app/e-{id}", 'ConfigManager@appPostEdit')->name("app-post-edit");
     Route::get("/app/vars-{appId}-{groupId}", 'ConfigManager@appVars')->name("app-vars");
     Route::get("/env/app-{appName}-group-{groupName}", 'ConfigManager@appEnv')->name("app-env");
     Route::get("/app/update-{appName}-{groupName}", 'ConfigManager@appUpdateEnv')->name("app-update");

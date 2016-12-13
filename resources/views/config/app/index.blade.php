@@ -16,11 +16,13 @@
         <td>
             <?php foreach($app->groups as $group){?>
             <a href="{{route('app-update',['appName'=>$app->name,'groupName'=>$group->name])}}">view {{$group->name}} env</a>
-
             <?php } ?>
         </td>
         <td>
-            <a href="{{route('app-view',['id'=>$app->id])">view</a>
+            <a href="{{route('app-view',['id'=>$app->id])}}">view</a>
+        </td>
+        <td>
+            <a href="<?php echo  route('app-edit',['id'=>$app->id]);?>">edit</a>
         </td>
     </tr>
 <?php }?>
