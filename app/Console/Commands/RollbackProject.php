@@ -61,28 +61,5 @@ class RollbackProject extends Command
         }
         $this->rollbackApp($app, $group);
     }
-    public function rollbackApp($app, $group)
-    {
-        $codeBase = $group->codeBase;
-        $appName = $app->name;
-        $codeBase = $this->normalize($codeBase);
-        if (!file_exists($codeBase . "/$appName")) {
-            mkdir($codeBase . "/$appName",0755,true);
-        }
-        $last = $this->normalize($codeBase . "/" . $appName . "/last");
-        if (!file_exists($last)) {
-            throw new \Exception('path:' . $last . " not exists");
-        }
-        $deployPath = $this->normalize($group->deployPath);
-        if(!rename($deployPath,$deployPath."-".$group->version)){
-            throw new \Exception("move failed;");
-        }
-        if (!rename($last."/", $group->deployPath."/")) {
-            throw new \Exception(' rollback deploy failed');
-        }
-    }
-    public function normalize($path)
-    {
-        return rtrim($path, "/\\");
-    }
+ 
 }

@@ -4,17 +4,17 @@ namespace App\Console\Commands;
 
 use App\Model\App;
 use App\Model\Group;
-use app\Zeus\Deploy;
+use App\Zeus\Deploy;
 use Illuminate\Console\Command;
 
-class DeployProject extends Command
+class ZeusMigrate extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'zeus:deploy {app : app name} {group : group name}';
+    protected $signature = 'zeus:migrate {app : appname} {group : groupName}';
 
     /**
      * The console command description.
@@ -61,9 +61,9 @@ class DeployProject extends Command
             return;
         }
         $deploy = new Deploy();
-        $deploy->deployApp($app, $group);
-        $this->info("恭喜,发布完成\nCongratulations! deploy succeed!");
+        $output = $deploy->migrate($app, $group);
+        $this->warn(join("\n", $output));
+        $this->info("恭喜,数据迁移完成\nCongratulations! migrate succeed!");
     }
-
 
 }
