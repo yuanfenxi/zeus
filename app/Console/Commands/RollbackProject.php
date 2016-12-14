@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Model\App;
 use App\Model\Group;
+use App\Zeus\Deploy;
 use Illuminate\Console\Command;
 
 class RollbackProject extends Command
@@ -59,7 +60,9 @@ class RollbackProject extends Command
             $this->error("group ".$groupName." of app:".$appName." can't found");
             return;
         }
-        $this->rollbackApp($app, $group);
+        $deploy = new Deploy();
+        $deploy->rollbackApp($app, $group);
+        $this->info("恭喜,发布完成\nCongratulations! deploy succeed!");
     }
- 
+
 }

@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use App\Model\App;
 use App\Model\Group;
-use app\Zeus\Deploy;
+use App\Zeus\Deploy;
 use Illuminate\Console\Command;
 
 class DeployProject extends Command

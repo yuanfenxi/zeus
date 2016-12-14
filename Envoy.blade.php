@@ -1,7 +1,10 @@
-@servers(['q1'=>'x@q2.glz8.net'])
+@servers(['q1'=>'x@q2.glz8.net','q2'=>'x@q2.glz8.net'])
 
 @task('f',['on'=>'q1'])
     ls -la
+@endtask
+@task('update:bigeye',['on'=>'q2'])
+    php /home/x/htdocs/zeus.glz8.net/artisan zeus:gitPull  bigeye online 
 @endtask
 
 
