@@ -1,12 +1,11 @@
 #! /usr/bin/env python3
-import sys
-from os.path import abspath, expanduser, dirname, join
-from itertools import chain
-import json
 import argparse
+import json
+import sys
+from itertools import chain
+from os.path import abspath, expanduser, dirname, join
 
 from vis import vis, unvis, VIS_WHITE
-
 
 __dir__ = dirname(abspath(__file__))
 

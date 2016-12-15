@@ -11,8 +11,8 @@
 
 namespace Symfony\Component\Routing\Tests;
 
-use Symfony\Component\Routing\Router;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\Router;
 
 class RouterTest extends \PHPUnit_Framework_TestCase
 {

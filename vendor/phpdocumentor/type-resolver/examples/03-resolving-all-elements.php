@@ -1,7 +1,7 @@
 <?php
 
-use phpDocumentor\Reflection\Types\Context;
 use phpDocumentor\Reflection\FqsenResolver;
+use phpDocumentor\Reflection\Types\Context;
 
 require '../vendor/autoload.php';
 

@@ -11,8 +11,8 @@
 namespace SebastianBergmann\Diff;
 
 use SebastianBergmann\Diff\LCS\LongestCommonSubsequence;
-use SebastianBergmann\Diff\LCS\TimeEfficientImplementation;
 use SebastianBergmann\Diff\LCS\MemoryEfficientImplementation;
+use SebastianBergmann\Diff\LCS\TimeEfficientImplementation;
 
 /**
  * Diff implementation.

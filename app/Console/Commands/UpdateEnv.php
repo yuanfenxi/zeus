@@ -2,11 +2,10 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
-
 use App\Model\App;
 use App\Model\Group;
 use App\Zeus\Deploy;
+use Illuminate\Console\Command;
 
 class UpdateEnv extends Command
 {

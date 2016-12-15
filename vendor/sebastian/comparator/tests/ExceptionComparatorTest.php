@@ -10,8 +10,8 @@
 
 namespace SebastianBergmann\Comparator;
 
-use \Exception;
-use \RuntimeException;
+use Exception;
+use RuntimeException;
 
 /**
  * @coversDefaultClass SebastianBergmann\Comparator\ExceptionComparator

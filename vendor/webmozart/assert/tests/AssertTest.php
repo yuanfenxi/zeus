@@ -12,8 +12,8 @@
 namespace Webmozart\Assert\Tests;
 
 use ArrayIterator;
-use Exception;
 use Error;
+use Exception;
 use LogicException;
 use PHPUnit_Framework_TestCase;
 use RuntimeException;

@@ -20,7 +20,6 @@ use Psy\Output\ShellOutput;
 use Psy\Readline\GNUReadline;
 use Psy\Readline\Libedit;
 use Psy\Readline\Readline;
-use Psy\Readline\Transient;
 use Psy\TabCompletion\AutoCompleter;
 use Psy\VarDumper\Presenter;
 use XdgBaseDir\Xdg;

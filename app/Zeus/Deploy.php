@@ -8,7 +8,6 @@
 
 namespace App\Zeus;
 use App\Model\App;
-use App\Model\Group;
 
 class Deploy
 {
