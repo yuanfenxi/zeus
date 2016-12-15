@@ -40,7 +40,8 @@ class Deploy
         }
         if (file_exists($group->deployPath)) {
             if (file_exists($codeBase . "/" . $appName . "/last")) {
-                if (!rmdir($codeBase . "/" . $appName . "/last")) {
+                exec("rm -rf ".$codeBase . "/" . $appName . "/last",$output,$returnValue);
+                if($returnValue!=0){
                     throw new \Exception("rm old " . $codeBase . "/" . $appName . "/last failed");
                 }
             }
