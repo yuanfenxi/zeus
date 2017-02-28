@@ -6,7 +6,7 @@
  * Time: 下午5:43
  */
 
-namespace app\Console;
+namespace App\Console;
 
 
 trait Notify

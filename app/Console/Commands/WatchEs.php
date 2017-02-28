@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use app\Console\Notify;
+use App\Console\Notify;
 use Illuminate\Console\Command;
 
 class WatchEs extends Command
