@@ -12,9 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect("/config/apps");
+    //return view('welcome');
 });
-
 Route::group(["prefix" => "config"], function () {
     Route::get("/apps", 'ConfigManager@apps')->name("apps");
     Route::get("/app/v-{id}", 'ConfigManager@appView')->name("app-view");

@@ -1,7 +1,15 @@
 @servers(['q1'=>'x@q2.glz8.net','q2'=>'x@q2.glz8.net'])
 
+@setup
+$now = new DateTime();
+
+$environment = isset($env) ? $env : "testing";
+@endsetup
+
+
 @task('f',['on'=>'q1'])
-    ls -la
+
+    echo '$now'
 @endtask
 @task('update:bigeye',['on'=>'q2'])
     php /home/x/htdocs/zeus.glz8.net/artisan zeus:gitPull  bigeye online 
