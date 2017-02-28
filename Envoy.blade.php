@@ -6,7 +6,6 @@ $now = new DateTime();
 $environment = isset($env) ? $env : "testing";
 @endsetup
 
-
 @task('f',['on'=>'q1'])
     echo '$now'
 @endtask
