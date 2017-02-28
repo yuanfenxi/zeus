@@ -8,7 +8,6 @@ $environment = isset($env) ? $env : "testing";
 
 
 @task('f',['on'=>'q1'])
-
     echo '$now'
 @endtask
 @task('update:bigeye',['on'=>'q2'])
