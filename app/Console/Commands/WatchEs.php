@@ -45,10 +45,9 @@ class WatchEs extends Command
         $this->watch('http://q1.glz8.net:9933/_cluster/health/?level=shards', 'club');
         $this->watch('http://q2.glz8.net:9933/_cluster/health/?level=shards', 'nvwa');
     }
-
-
+    
     private function errorOfES($index){
-        $this->sendMsgToStaff('xurenlu@glz8.com', $index."的搜索出问题了。。。");
+        $this->sendMsgToStaff(['xurenlu@glz8.com','qianhui@glz8.com'], $index."的搜索出问题了。。。");
     }
     private function watch($url,$index){
         $json = file_get_contents($url);

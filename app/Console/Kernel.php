@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\DeployProject;
 use App\Console\Commands\RollbackProject;
+use App\Console\Commands\Test;
 use App\Console\Commands\UpdateEnv;
 use App\Console\Commands\WatchEs;
 use App\Console\Commands\ZeusGitPull;
@@ -27,7 +28,8 @@ class Kernel extends ConsoleKernel
         ZeusMigrate::class,
         ZeusGitPull::class,
         UpdateEnv::class,
-        WatchEs::class
+        WatchEs::class,
+        Test::class
     ];
 
     /**
