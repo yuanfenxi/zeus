@@ -30,3 +30,6 @@ Route::group(["prefix" => "config"], function () {
     Route::get("/app/add", 'ConfigManager@addApp')->name("app-add");
     Route::post("/app/add", 'ConfigManager@postAddApp')->name("app-post-add");
 });
+Route::group(['prefix'=>"agent"],function(){
+    Route::get("/report",'Agent@report')->name("agent-report");
+});

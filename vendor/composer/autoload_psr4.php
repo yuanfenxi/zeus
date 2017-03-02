@@ -30,6 +30,7 @@ return array(
     'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
     'Psy\\' => array($vendorDir . '/psy/psysh/src/Psy'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Predis\\' => array($vendorDir . '/predis/predis/src'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'NvwaCommon\\' => array($vendorDir . '/glz/nvwa-common/src/NvwaCommon'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),

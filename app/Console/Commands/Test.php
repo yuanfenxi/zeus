@@ -2,9 +2,11 @@
 
 namespace App\Console\Commands;
 
+use App\Console\CommandShorts;
 use App\Console\Notify;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redis;
 
 class Test extends Command
 {
@@ -40,6 +42,7 @@ class Test extends Command
      */
     public function handle()
     {
+        Redis::Publish("command:as:root",CommandShorts::WHO_AM_I);
         Log::error("Testing");
 //        print $this->buildUrl([
 //            'xurenlu@glz8.com',

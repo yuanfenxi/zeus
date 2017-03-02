@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Console\Commands\AsRoot;
 use App\Console\Commands\DeployProject;
 use App\Console\Commands\RollbackProject;
 use App\Console\Commands\Test;
@@ -29,7 +30,8 @@ class Kernel extends ConsoleKernel
         ZeusGitPull::class,
         UpdateEnv::class,
         WatchEs::class,
-        Test::class
+        Test::class,
+        AsRoot::class
     ];
 
     /**
