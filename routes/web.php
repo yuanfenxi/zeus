@@ -30,6 +30,8 @@ Route::group(["prefix" => "config"], function () {
     Route::post("/app/update-{appName}-{groupName}", 'ConfigManager@appUpdateEnvPost')->name("app-post-update");
     Route::get("/app/add", 'ConfigManager@addApp')->name("app-add");
     Route::post("/app/add", 'ConfigManager@postAddApp')->name("app-post-add");
+    Route::get("/group/update-code/{id}",'ConfigManager@groupUpdateCode')->name("group-update-code");
+    Route::get("/group/deploy-code/{id}",'ConfigManager@groupDeployCode')->name("group-deploy-code");
 });
 Route::group(['prefix'=>"agent"],function(){
     Route::get("/report",'Agent@report')->name("agent-report");

@@ -39,7 +39,7 @@ class ConfigManager extends Controller
     }
 
     public function appRemove(Request $request,$id){
-        
+
     }
     public function appView(Request $request,$id){
         return view("config.app.view",['app'=>App::find($id)]);
@@ -122,6 +122,7 @@ class ConfigManager extends Controller
     }
 
     public function groupEdit(Request $request,$id){
+        
         return view("config.group.edit",['group'=>Group::where("id",$id)->first()]);
     }
 
