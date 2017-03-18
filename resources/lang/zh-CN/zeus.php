@@ -22,6 +22,9 @@ return [
     'save-succeed'=>"保存成功",
     'save-failed'=>"保存失败",
     'group-not-exists'=>"该分组不存在",
-    'command-failed'=>"执行命令失败,说明: :msg",
-    'command-succeed'=>"执行命令成功,花费时间{:time}秒"
+    'command-failed'=>"执行命令失败,说明: <kbd>:msg</kbd>",
+    'command-succeed'=>"执行命令成功,花费时间<kbd>:time</kbd>秒",
+    'congratulations'=>"恭喜!",
+    'notice'=>"注意!",
+    'warning'=>"警告!"
 ];

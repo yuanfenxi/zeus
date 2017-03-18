@@ -17,7 +17,7 @@ $t = 2017031903; ?>
     if ($notice) {
         echo '<div class="alert alert-warning alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>注意:</strong> ' . $notice . '
+  <strong>'.trans('zeus.notice').'</strong> ' . $notice . '
 </div>';
     }
 
@@ -25,14 +25,14 @@ $t = 2017031903; ?>
     if ($error) {
         echo '<div class="alert alert-danger alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>警告:</strong> ' . $error . '
+  <strong>'.trans('zeus.warning').'</strong> ' . $error . '
 </div>';
     }
     $success = app()->request->session()->get("success");
     if ($success) {
         echo '<div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong>恭喜:</strong> ' . $success . '
+  <strong>'.trans('zeus.congratulations').'</strong> ' . $success . '
 </div>';
     }
     ?>
