@@ -1,9 +1,16 @@
-<?php
-/**
- * Created by IntelliJ IDEA.
- * User: r
- * Date: 2016/12/11
- * Time: 上午12:28
- */
-?>
+<html>
+<head>
+    <title>
+        @lang('customize.site')
+    </title>
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+
+<body>
 @yield("content")
+
+<script type="text/javascript" src="/js/app.js"></script>
+</body>
+</html>
+
+

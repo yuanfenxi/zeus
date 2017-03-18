@@ -9,7 +9,8 @@
         "laravel/framework": "5.3.*",
         "glz/nvwa-common": "dev-master",
         "frozennode/administrator": "^5.0",
-        "predis/predis": "^1.1"
+        "predis/predis": "^1.1",
+        "glz/nvwa-common": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

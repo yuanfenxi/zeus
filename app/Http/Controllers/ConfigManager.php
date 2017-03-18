@@ -38,6 +38,9 @@ class ConfigManager extends Controller
         return view("config.app.edit",['app'=>App::where('id',$id)->first()]);
     }
 
+    public function appRemove(Request $request,$id){
+        
+    }
     public function appView(Request $request,$id){
         return view("config.app.view",['app'=>App::find($id)]);
     }
