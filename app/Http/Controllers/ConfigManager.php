@@ -26,13 +26,14 @@ class ConfigManager extends Controller
         return view("config.app.create");
     }
 
-    public function appUpdateEnv(Request $request,$appName,$groupName){
-        return view("config.app.update",['appName'=>$appName,'groupName'=>$groupName]);
+    public function groupViewEnv(Request $request,$appName,$groupName){
+        $app = App::where("name",$appName)->first();
+        $group = Group::where("name",$groupName)->first();
+        return view("config.group.view",['appName'=>$appName,'groupName'=>$groupName,
+        'app'=>$app,'group'=>$group]);
     }
 
-    public function appUpdateEnvPost(Request $request,$appName,$groupName){
-        return $request->all();
-    }
+
 
     public function appEdit(Request $request,$id){
         return view("config.app.edit",['app'=>App::where('id',$id)->first()]);
@@ -122,7 +123,7 @@ class ConfigManager extends Controller
     }
 
     public function groupEdit(Request $request,$id){
-        
+
         return view("config.group.edit",['group'=>Group::where("id",$id)->first()]);
     }
 

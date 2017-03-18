@@ -14,8 +14,7 @@ class App extends Model
         return $this->hasMany('App\Model\Group');
     }
 
-    public static function buildEnv($appName, $groupName)
-    {
+    public static function getAllEnv($appName,$groupName){
         $app = App::where("name", $appName)->first();
         if (!$app) {
             $response = new Response();
@@ -36,6 +35,12 @@ class App extends Model
         foreach ($values as $value) {
             $res[$value->variable->name] = $value->value;
         }
+        return $res;
+    }
+
+    public static function buildEnv($appName, $groupName)
+    {
+        $res = self::getAllEnv($appName, $groupName);
         $lines = [];
         foreach ($res as $k => $v) {
             if (strpos($v, "'") !== false) {

@@ -2,7 +2,7 @@
 
 return [
     'site'=>"宙斯-laravel世界的天神",
-    'app-list'=>"应用列表",
+    'app-list'=>"应用管理",
     'create-new-app'=>"添加新应用",
     'app-name'=>"应用名",
     'view'=>"查看",

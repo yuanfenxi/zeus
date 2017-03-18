@@ -41,7 +41,7 @@
                         <a href="{{route('group-edit',['id'=>$group->id])}}">{{$group->name}}</a>
                     </td>
                     <td>
-                        <a href="{{route('app-update',['appName'=>$app->name,'groupName'=>$group->name])}}">
+                        <a href="{{route('group-view-env',['appName'=>$app->name,'groupName'=>$group->name])}}">
                             @lang('zeus.group-view-env',['name'=>$group->name])
                            </a>
 

@@ -13,26 +13,25 @@
 
 Route::get('/', function () {
     return redirect("/config/apps");
-    //return view('welcome');
 });
+Route::get("/env/{appName}/{groupName}", 'ConfigManager@appEnv')->name("app-env");
 Route::group(["prefix" => "config"], function () {
     Route::get("/apps", 'ConfigManager@apps')->name("apps");
     Route::get("/app/v-{id}", 'ConfigManager@appView')->name("app-view");
     Route::get("/app/e-{id}", 'ConfigManager@appEdit')->name("app-edit");
     Route::get("/app/remove-{id}", 'ConfigManager@appRemove')->name("app-remove");
-    Route::get("/group/v-{id}",'ConfigManager@groupView')->name("group-view");
-    Route::get('/group/e-{id}','ConfigManager@groupEdit')->name("group-edit");
-    Route::post('/group/e-{id}','ConfigManager@groupPostEdit')->name("group-post-edit");
+    Route::get("/group/v-{id}", 'ConfigManager@groupView')->name("group-view");
+    Route::get('/group/e-{id}', 'ConfigManager@groupEdit')->name("group-edit");
+    Route::post('/group/e-{id}', 'ConfigManager@groupPostEdit')->name("group-post-edit");
     Route::post("/app/e-{id}", 'ConfigManager@appPostEdit')->name("app-post-edit");
     Route::get("/app/vars-{appId}-{groupId}", 'ConfigManager@appVars')->name("app-vars");
-    Route::get("/env/app-{appName}-group-{groupName}", 'ConfigManager@appEnv')->name("app-env");
-    Route::get("/app/update-{appName}-{groupName}", 'ConfigManager@appUpdateEnv')->name("app-update");
+    Route::get("/group/view-env-{appName}-{groupName}", 'ConfigManager@groupViewEnv')->name("group-view-env");
     Route::post("/app/update-{appName}-{groupName}", 'ConfigManager@appUpdateEnvPost')->name("app-post-update");
     Route::get("/app/add", 'ConfigManager@addApp')->name("app-add");
     Route::post("/app/add", 'ConfigManager@postAddApp')->name("app-post-add");
-    Route::get("/group/update-code/{id}",'ConfigManager@groupUpdateCode')->name("group-update-code");
-    Route::get("/group/deploy-code/{id}",'ConfigManager@groupDeployCode')->name("group-deploy-code");
+    Route::get("/group/update-code/{id}", 'ConfigManager@groupUpdateCode')->name("group-update-code");
+    Route::get("/group/deploy-code/{id}", 'ConfigManager@groupDeployCode')->name("group-deploy-code");
 });
-Route::group(['prefix'=>"agent"],function(){
-    Route::get("/report",'Agent@report')->name("agent-report");
+Route::group(['prefix' => "agent"], function () {
+    Route::get("/report", 'Agent@report')->name("agent-report");
 });
