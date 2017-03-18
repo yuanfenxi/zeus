@@ -22,6 +22,6 @@ const app = new Vue({
 
 
 $(document).ready(function(){
-    //$('div.alert').fadeOut('slow');
+    $('div.alert').fadeOut(3000);
 });
 

@@ -20,7 +20,6 @@ $t = 2017031903; ?>
   <strong>'.trans('zeus.notice').'</strong> ' . $notice . '
 </div>';
     }
-
     $error = app()->request->session()->get('error');
     if ($error) {
         echo '<div class="alert alert-danger alert-dismissible" role="alert">
