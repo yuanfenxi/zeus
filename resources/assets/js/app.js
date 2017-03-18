@@ -14,7 +14,7 @@ require('./bootstrap');
  */
 
 Vue.component('example', require('./components/Example.vue'));
-
+Vue.component('foot',require("./components/Footer.vue"));
 const app = new Vue({
     el: '#app'
 });
