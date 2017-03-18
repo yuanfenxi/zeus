@@ -39,7 +39,7 @@
                         @lang('zeus.group-codeBase')
                     </div></label>
                 <div class="col-md-6">
-                    <input id="codeBase" type="text" class="form-control" name="codeBase" value="{{ $group->codeBase }}">
+                    <input id="codeBase" type="text" class="form-control" name="codeBase" value="{{ $group->codeBase }}" placeholder="/var/www/codebase/">
                     @if ($errors->has('codeBase'))
               <span class="help-block">
                    <strong>{{ $errors->first('codeBase') }}</strong>
@@ -52,7 +52,7 @@
                 <label for="deployPath" class="col-md-4 control-label right-label"><div>
                         @lang('zeus.group-deployPath'):</div></label>
                 <div class="col-md-6">
-                    <input id="deployPath" type="text" class="form-control" name="deployPath" value="{{ $group->deployPath }}">
+                    <input id="deployPath" type="text" class="form-control" name="deployPath" value="{{ $group->deployPath }}" placeholder="/var/www/example.com/">
                     @if ($errors->has('deployPath'))
                  <span class="help-block">
                       <strong>{{ $errors->first('deployPath') }}</strong>
@@ -61,6 +61,22 @@
                 </div>
             </div>
 
+            <div class="form-group{{ $errors->has('hosts') ? ' has-error' : '' }}">
+                <label for="hosts" class="col-md-4 control-label right-label">
+                    <div>@lang('zeus.group-hosts'):</div>
+                </label>
+                <div class="col-md-6">
+                    <textarea id="hosts" class="form-control" name="hosts"
+                    rows="6" cols="50" placeholder="q1.example.com
+q2.example.com//备份机
+//一行一个,用双斜线表示注释;">{{$group->hosts}}</textarea>
+                    @if ($errors->has('hosts'))
+                         <span class="help-block">
+                              <strong>{{ $errors->first('hosts') }}</strong>
+                         </span>
+                    @endif
+                </div>
+            </div>
 
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">

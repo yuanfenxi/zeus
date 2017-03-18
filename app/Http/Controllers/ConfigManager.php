@@ -139,9 +139,28 @@ class ConfigManager extends Controller
         $group->name = $name;
         $group->deployPath = $deployPath;
         $group->codeBase = $codeBase;
+        $group->hosts = $request->input("hosts");
         if(!$group->save()){
-            return "save error";
+            $this->redirectWithError($request, trans('zeus.save-failed'));
         }
-        return redirect()->route('group-edit',['id'=>$id]);
+        return $this->gotoWithSucc($request,trans('zeus.save-succeed') , route('group-edit',['id'=>$id]));
+    }
+
+    public function groupUpdateCode(Request $request,$groupId){
+        /**
+         * @var $group Group
+         */
+        $group = Group::find($groupId);
+        if(!$group){
+            return $this->redirectWithError($request, trans('zeus.group-not-exists'));
+        }
+        try{
+            $t1 = microtime(true);
+            $group->doOperation('gitPull');
+            $t2 = microtime(true);
+            return $this->redirectWithSucc($request, trans('zeus.command-succeed',['time'=>number_format(($t2-$t1),2)]));
+        }catch(\Exception $e){
+            return $this->redirectWithError($request, trans('zeus.command-failed',['msg'=>$e->getMessage()]));
+        }
     }
 }

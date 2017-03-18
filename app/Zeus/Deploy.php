@@ -75,26 +75,6 @@ class Deploy
         }
     }
 
-
-
-    public function gitUpdate($app,$group){
-        chdir($group->deployPath);
-        $command = "git pull";
-        exec($command, $output, $return);
-        if($return!=0){
-            throw new \Exception('git pull failed:return '.$return.",output:".join("\n",$output));
-        }
-        return $output;
-    }
-    public function migrate($app,$group){
-
-        $command = "php ".$group->deployPath."/artisan migrate";
-        exec($command, $output, $return);
-        if($return!=0){
-            throw new \Exception('git pull failed:return '.$return.",output:".join("\n",$output));
-        }
-        return $output;
-    }
     public function updateEnv($app,$group){
         $envContent = App::buildEnv($app->name, $group->name);
         if(!$envContent){

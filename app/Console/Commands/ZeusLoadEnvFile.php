@@ -22,7 +22,7 @@ class ZeusLoadEnvFile extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = '将某个配置文件的内容,写入到某个app的某个group里去,初始化的时候有用.';
 
     /**
      * Create a new command instance.

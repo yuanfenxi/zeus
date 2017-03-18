@@ -15,7 +15,13 @@ return [
     'group-view-env'=>"查看分组环境配置(:name)",
     'group-update-code'=>"更新[:name]的代码【小更新】",
     'group-deploy-code'=>'发布[:name]【大版本】',
+    'group-hosts'=>"分组的机器列表",
     'git-repo-address'=>"Git仓库地址",
     'group-codeBase'=>'分组codeBase',
     'group-deployPath'=>"分组deployPath",
+    'save-succeed'=>"保存成功",
+    'save-failed'=>"保存失败",
+    'group-not-exists'=>"该分组不存在",
+    'command-failed'=>"执行命令失败,说明: :msg",
+    'command-succeed'=>"执行命令成功,花费时间{:time}秒"
 ];

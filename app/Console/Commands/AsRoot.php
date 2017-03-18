@@ -53,7 +53,6 @@ class AsRoot extends Command
                 Log::error("redis pub/sub error... got.");
                 Redis::subscribe($listName,
                     function ($v) use ($agentServer, $hostname) {
-                        Log::error("got command:");
                         if (isset(AsRoot::$commands[intval($v)])) {
                             $command = AsRoot::$commands[intval($v)];
                             exec($command, $output, $result);
