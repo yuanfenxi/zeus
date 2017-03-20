@@ -17,6 +17,8 @@ require('bootstrap-sass');
  */
 
 window.Vue = require('vue');
+ ElementUI =  require( 'element-ui')
+//import 'element-ui/lib/theme-default/index.css'
 require('vue-resource');
 
 /**

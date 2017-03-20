@@ -11,17 +11,16 @@
 <div class="panel panel-default  ">
 
     <div class="panel-heading">
-        <h3>
-            <ol class="breadcrumb">
-                <li><a href="{{route('apps')}}">@lang('zeus.app-list')</a></li>
-                <li>
-                    <a href="{{route('app-view',['id'=>$group->app_id])}}">
-                        {{$group->app->name}}
-                    </a>
-                </li>
-                <li class="active"> @lang('zeus.group-view-env',['name'=>$group->name])</li>
-            </ol>
-        </h3>
+        <el-breadcrumb separator="/">
+            <el-breadcrumb-item ><a href="{{route('apps')}}">@lang('zeus.app-list')</a></el-breadcrumb-item>
+            <el-breadcrumb-item>  <a href="{{route('app-view',['id'=>$group->app_id])}}">
+                    {{$group->app->name}}
+                </a></el-breadcrumb-item>
+            <el-breadcrumb-item>@lang('zeus.group-view-env',['name'=>$group->name])</el-breadcrumb-item>
+
+        </el-breadcrumb>
+
+     
     </div>
 
     <div class="panel-body">

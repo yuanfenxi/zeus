@@ -19,6 +19,14 @@ class EnvHelper extends Loader
     public function getConfig(){
         return $this->config;
     }
+    public function parseLines($lines){
+        foreach ($lines as $line) {
+            if (!$this->isComment($line) && $this->looksLikeSetter($line)) {
+                $this->parseLine($line);
+            }
+        }
+        
+    }
     public function load()
     {
         $this->ensureFileIsReadable();

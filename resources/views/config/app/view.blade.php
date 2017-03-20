@@ -4,14 +4,15 @@
 
 <div class="panel panel-default  ">
     <div class="panel-heading">
-        <h3>
-            <ol class="breadcrumb">
-                <li><a href="{{route('apps')}}">@lang('zeus.app-list')</a></li>
-                <li class="active"> @lang('zeus.view-app',['name'=>$app->name])</li>
-            </ol>
+      
+            <el-breadcrumb separator="/">
+                <el-breadcrumb-item ><a href="{{route('apps')}}">@lang('zeus.app-list')</a></el-breadcrumb-item>
+                <el-breadcrumb-item> @lang('zeus.view-app',['name'=>$app->name])</el-breadcrumb-item>
+
+            </el-breadcrumb>
 
 
-        </h3>
+
 
     </div>
     <div class="panel-body">

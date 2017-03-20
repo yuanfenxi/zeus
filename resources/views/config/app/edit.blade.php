@@ -4,10 +4,12 @@
 <div class="panel panel-default  ">
     <div class="panel-heading">
         <h3>
-            <ol class="breadcrumb">
-                <li><a href="{{route('apps')}}">@lang('zeus.app-list')</a></li>
-                <li class="active">  @lang('zeus.edit-app',['name'=>$app->name])</li>
-            </ol>
+            <el-breadcrumb separator="/">
+                <el-breadcrumb-item ><a href="{{route('apps')}}">@lang('zeus.app-list')</a></el-breadcrumb-item>
+                <el-breadcrumb-item> @lang('zeus.edit-app',['name'=>$app->name])</el-breadcrumb-item>
+
+            </el-breadcrumb>
+
         </h3>
 
 
@@ -20,7 +22,8 @@
                     <div>名字:</div>
                 </label>
                 <div class="col-md-6">
-                    <input id="name" type="text" class="form-control" name="name" value="{{$app->name}}">
+                    <el-input  placeholder="请输入内容" name="name" id="name" value="{{$app->name}}" ></el-input>
+
                     @if ($errors->has('name'))
                  <span class="help-block">
                       <strong>{{ $errors->first('name') }}</strong>
@@ -46,7 +49,7 @@
 
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
-                    <button type="submit" class="btn btn-primary">提交</button>
+                    <el-button type="primary" native-type="submit">提交</el-button>
                 </div>
             </div>
         </form>

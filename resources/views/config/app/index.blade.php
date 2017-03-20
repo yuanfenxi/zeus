@@ -1,5 +1,7 @@
 @extends('layouts.app')
 @section('content')
+
+
 <?php
 /**
  * Created by IntelliJ IDEA.
@@ -38,11 +40,11 @@
 
                     <td>
 
-                        <a href="<?php echo  route('app-edit',['id'=>$app->id]);?>" class="btn btn-warning">  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> @lang('zeus.edit')</a>
+                        <a href="<?php echo  route('app-edit',['id'=>$app->id]);?>" class="btn btn-warning"> <i class="el-icon-edit"></i> @lang('zeus.edit')</a>
                     </td>
                     <td>
                         <a href="<?php echo  route('app-remove',['id'=>$app->id]);?>" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                           <i class="el-icon-delete"></i>
                             @lang('zeus.remove')</a>
                     </td>
                 </tr>

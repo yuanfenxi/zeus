@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use app\DBException;
 use App\Model\App;
 use App\Model\Group;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -160,6 +161,7 @@ class ConfigManager extends Controller
             $t2 = microtime(true);
             return $this->redirectWithSucc($request, trans('zeus.command-succeed',['time'=>number_format(($t2-$t1),2)]));
         }catch(\Exception $e){
+            app()->make(ExceptionHandler::class)->report($e);
             return $this->redirectWithError($request, trans('zeus.command-failed',['msg'=>$e->getMessage()]));
         }
     }

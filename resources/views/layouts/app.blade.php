@@ -1,11 +1,12 @@
 <?php
-$t = 2017031903; ?>
+$t = 2017031904; ?>
 <html>
 <head>
     <title>
         @lang('customize.site')
     </title>
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/app.css?t={{$t}}">
+    <link rel="stylesheet" href="/css/ele/index.css?t={{$t}}">
 </head>
 
 <body>
