@@ -51,6 +51,12 @@
 
                         <a href="{{route('group-deploy-code',['id'=>$group->id])}}" class="btn btn-danger">@lang('zeus.group-deploy-code',['name'=>$group->name])</a>
 
+
+                        <a href="{{route('group-view-env',['id'=>$group->id])}}">
+                            @lang('zeus.group-view-env',['name'=>$group->name])
+                        </a>
+
+                        
                         <a href="{{route('group-diff-env',['id'=>$group->id])}}" class="">@lang('zeus.group-diff-env',['name'=>$group->name])</a>
 
                     </td>
