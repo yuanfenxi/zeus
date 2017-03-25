@@ -61,7 +61,7 @@ class DeployProject extends Command
             return;
         }
         $deploy = new Deploy();
-        $deploy->deployApp($app, $group);
+        $deploy->deployApp($group);
         $this->info("恭喜,发布完成\nCongratulations! deploy succeed!");
     }
 

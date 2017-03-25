@@ -8,11 +8,13 @@
 
 namespace App\Zeus;
 use App\Model\App;
+use App\Model\Group;
 
 class Deploy
 {
-    public function deployApp($app, $group)
+    public function deployApp(Group $group)
     {
+        $app = $group->app;
         $codeBase = $group->codeBase;
         //每次发布,都将group的version加1;
         $newVersion = $group->version = $group->version + 1;

@@ -15,6 +15,7 @@ Route::get('/', function () {
     return redirect("/config/apps");
 });
 Route::get("/env/{appName}/{groupName}", 'ConfigManager@appEnv')->name("app-env");
+Route::get("/user", 'ConfigManager@user')->name("user");
 Route::group(["prefix" => "config"], function () {
     Route::get("/apps", 'ConfigManager@apps')->name("apps");
     Route::get("/app/v-{id}", 'ConfigManager@appView')->name("app-view");
@@ -31,7 +32,27 @@ Route::group(["prefix" => "config"], function () {
     Route::post("/app/add", 'ConfigManager@postAddApp')->name("app-post-add");
     Route::get("/group/update-code/{id}", 'ConfigManager@groupUpdateCode')->name("group-update-code");
     Route::get("/group/deploy-code/{id}", 'ConfigManager@groupDeployCode')->name("group-deploy-code");
+    Route::get("/group/read-env/{id}", 'ConfigManager@groupReadEnv')->name("group-read-env");
+    Route::get("/group/view-env/{id}", 'ConfigManager@groupViewEnv')->name("group-view-env");
+    Route::post("/post-env/{id}",'ConfigManager@postEnv')->name('group-post-env');
+    Route::get("/diff/{id}",'ConfigManager@diffEnv')->name('group-diff-env');
+    Route::get("/write-env/{id}",'ConfigManager@writeRemote')->name('group-write-remote-env');
 });
 Route::group(['prefix' => "agent"], function () {
     Route::get("/report", 'Agent@report')->name("agent-report");
+});
+
+Route::group(['prefix'=>'host'],function(){
+    Route::get("/create",'HostManageController@create');
+    Route::post("/create",'HostManagerController@postCreate');
+    Route::get("/edit/{id}",'HostManageController@edit');
+    Route::post("/edit/{id}",'HostManagerController@postEdit');
+    Route::get("/index",'HostManagerController@index');
+    Route::get("/remove/{id}",'HostManagerController@remove');
+
+});
+
+Route::group(['prefix'=>'logs'],function(){
+
+    Route::get("/index",'LogController@index');
 });

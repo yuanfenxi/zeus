@@ -11,11 +11,11 @@
 
 namespace Symfony\Component\Debug\FatalErrorHandler;
 
-use Composer\Autoload\ClassLoader as ComposerClassLoader;
-use Symfony\Component\ClassLoader\ClassLoader as SymfonyClassLoader;
-use Symfony\Component\Debug\DebugClassLoader;
 use Symfony\Component\Debug\Exception\ClassNotFoundException;
 use Symfony\Component\Debug\Exception\FatalErrorException;
+use Symfony\Component\Debug\DebugClassLoader;
+use Composer\Autoload\ClassLoader as ComposerClassLoader;
+use Symfony\Component\ClassLoader\ClassLoader as SymfonyClassLoader;
 
 /**
  * ErrorHandler for classes that do not exist.
@@ -173,7 +173,7 @@ class ClassNotFoundFatalErrorHandler implements FatalErrorHandlerInterface
         );
 
         if ($prefix) {
-            $candidates = array_filter($candidates, function ($candidate) use ($prefix) {return 0 === strpos($candidate, $prefix);});
+            $candidates = array_filter($candidates, function ($candidate) use ($prefix) { return 0 === strpos($candidate, $prefix); });
         }
 
         // We cannot use the autoloader here as most of them use require; but if the class

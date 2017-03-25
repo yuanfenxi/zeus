@@ -7,9 +7,29 @@ $t = 2017031904; ?>
     </title>
     <link rel="stylesheet" href="/css/app.css?t={{$t}}">
     <link rel="stylesheet" href="/css/ele/index.css?t={{$t}}">
+    <style type="text/css">
+        .red {
+            color:red;
+        }
+        .hidden-row {
+            display:none;
+        }
+    </style>
 </head>
 
 <body>
+
+<div class="row">
+    <div class="col-md-6">
+        &nbsp;
+    </div>
+    <div class="col-md-6">
+        <div class="pull-right" style="padding-right:1em;">
+            <a href="/logs/index">@lang("zeus.logs-index")</a>
+        </div>
+
+    </div>
+</div>
 <div id="app">
 
     <?php

@@ -6,7 +6,7 @@
  * Time: 上午12:31
  */
 
-namespace app;
+namespace App;
 
 
 class DBException extends \Exception

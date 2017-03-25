@@ -24,16 +24,42 @@
     </div>
 
     <div class="panel-body">
-        <div class="row">
-            <label for="env" class="col-md-4 control-label right-label">
-                <div class="pull-right">环境配置:</div>
-            </label>
-            <div class="col-md-6">
-            <textarea rows="8" cols="60" id="env" class="form-control" name="env" readonly="readonly"><?php
-                echo htmlspecialchars(\App\Model\App::buildEnv($appName, $groupName));
-                ?></textarea>
+
+        <form class="form-horizontal" role="form" method="POST" action="{{ route('group-post-env',['id'=>$group->id]) }}">
+            {{ csrf_field() }}
+            <div class="form-group{{ $errors->has('env') ? ' has-error' : '' }}">
+                <label for="env" class="col-md-4 control-label right-label">
+                    <div>@lang('zeus.env')</div>
+                </label>
+                <div class="col-md-6">
+                    <el-input
+                        type="textarea"
+                        :autosize="{ minRows: 2, maxRows: 40}"
+                        placeholder="请输入内容"
+                        id="env"
+                        value="{{$env}}"
+                        name='env'
+                    >
+                    </el-input>
+
+                    @if ($errors->has('env'))
+                     <span class="help-block">
+                          <strong>{{ $errors->first('env') }}</strong>
+                     </span>
+                    @endif
+                </div>
             </div>
-        </div>
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-4" >
+                    <el-button type="primary" native-type="submit">提交</el-button>
+                </div>
+            </div>
+
+        </form>
+
+
+
     </div>
 </div>
 

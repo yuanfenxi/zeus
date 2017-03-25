@@ -6,7 +6,7 @@
  * Time: 上午1:39
  */
 
-namespace app\Misc;
+namespace App\Misc;
 
 
 use Dotenv\Loader;

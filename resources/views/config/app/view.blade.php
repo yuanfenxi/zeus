@@ -4,7 +4,7 @@
 
 <div class="panel panel-default  ">
     <div class="panel-heading">
-      
+
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item ><a href="{{route('apps')}}">@lang('zeus.app-list')</a></el-breadcrumb-item>
                 <el-breadcrumb-item> @lang('zeus.view-app',['name'=>$app->name])</el-breadcrumb-item>
@@ -16,7 +16,7 @@
 
     </div>
     <div class="panel-body">
-        <table class="table table-responsive table-striped table-bordered">
+        <table class="table table-responsive table-striped table-bordered table-hover">
             <tr>
                 <th>@lang('zeus.app-name'):</th>
                 <td>{{$app->name}}
@@ -35,20 +35,24 @@
 
 
         <h3>应用分组环境:</h3>
-        <table class="table table-striped table-responisve table-bordered">
+        <table class="table table-striped table-responisve table-bordered table-hover">
             <?php foreach ($app->groups as $group) { ?>
                 <tr>
                     <td>
                         <a href="{{route('group-edit',['id'=>$group->id])}}">{{$group->name}}</a>
                     </td>
                     <td>
-                        <a href="{{route('group-view-env',['appName'=>$app->name,'groupName'=>$group->name])}}">
-                            @lang('zeus.group-view-env',['name'=>$group->name])
-                           </a>
+                       
 
                         <a href="{{route('group-update-code',['id'=>$group->id])}}" class="btn btn-warning">@lang('zeus.group-update-code',['name'=>$group->name])</a>
 
+                        <a href="{{route('group-read-env',['id'=>$group->id])}}" class="btn btn-warning">@lang('zeus.group-read-env',['name'=>$group->name])</a>
+
+
                         <a href="{{route('group-deploy-code',['id'=>$group->id])}}" class="btn btn-danger">@lang('zeus.group-deploy-code',['name'=>$group->name])</a>
+
+                        <a href="{{route('group-diff-env',['id'=>$group->id])}}" class="">@lang('zeus.group-diff-env',['name'=>$group->name])</a>
+
                     </td>
                 </tr>
 

@@ -10,8 +10,8 @@
 
 namespace SebastianBergmann\Comparator;
 
-use DOMDocument;
 use DOMNode;
+use DOMDocument;
 
 /**
  * @coversDefaultClass SebastianBergmann\Comparator\DOMNodeComparator

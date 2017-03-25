@@ -7,6 +7,7 @@ return [
     'app-name'=>"应用名",
     'view'=>"查看",
     'edit'=>"修改",
+    'env'=>"配置",
     'remove'=>"删除",
     'view-app'=>"查看应用详情: <kbd>:name</kbd>",
     'edit-app'=>"修改应用: :name",
@@ -26,5 +27,14 @@ return [
     'command-succeed'=>"执行命令成功,花费时间<kbd>:time</kbd>秒",
     'congratulations'=>"恭喜!",
     'notice'=>"注意!",
-    'warning'=>"警告!"
+    'warning'=>"警告!",
+    "env-different-among-hosts"=>"多台机器之间.env文件不一致",
+    'hosts-list-empty'=>"主机列表为空,请修改group设置.应用::app,Group::group",
+    'group-read-env'=>"读入最新配置",
+    'group-not-found'=>"分组未找到",
+    'logs-index'=>"命令日志列表",
+    'group-diff-env'=>"分组配置对比",
+    'remote-server'=>"服务器配置",
+    'database-env'=>"数据库中记录的新配置",
+    'group-write-remote-env'=>"推送配置到服务器上"
 ];
