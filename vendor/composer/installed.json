@@ -3810,7 +3810,7 @@
         "source": {
             "type": "git",
             "url": "git@git.glz8.com:glz/nvwa-common.git",
-            "reference": "5a91aa4a0ec5d5eb1a9f08e25260c0d166483bfa"
+            "reference": "a42a25868b2ef61b92a1a1c32fef09ba4f62d18b"
         },
         "require": {
             "firebase/php-jwt": "^3.0",
@@ -3818,7 +3818,7 @@
             "snoopy/snoopy": ">=1.0",
             "vlucas/phpdotenv": "~2.2"
         },
-        "time": "2017-03-25 16:51:27",
+        "time": "2017-03-25 21:55:30",
         "type": "library",
         "installation-source": "source",
         "autoload": {
