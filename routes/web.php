@@ -33,7 +33,7 @@ Route::group(["prefix" => "config"], function () {
     Route::get("/group/update-code/{id}", 'ConfigManager@groupUpdateCode')->name("group-update-code");
     Route::get("/group/deploy-code/{id}", 'ConfigManager@groupDeployCode')->name("group-deploy-code");
     Route::get("/group/read-env/{id}", 'ConfigManager@groupReadEnv')->name("group-read-env");
-    Route::get("/group/view-env/{id}", 'ConfigManager@groupViewEnv')->name("group-view-env");
+    Route::get("/group/view-env/{id}", 'ConfigManager@groupViewEnv')->name("group-edit-env");
     Route::post("/post-env/{id}",'ConfigManager@postEnv')->name('group-post-env');
     Route::get("/diff/{id}",'ConfigManager@diffEnv')->name('group-diff-env');
     Route::get("/write-env/{id}",'ConfigManager@writeRemote')->name('group-write-remote-env');

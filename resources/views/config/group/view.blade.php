@@ -37,7 +37,7 @@
                         :autosize="{ minRows: 2, maxRows: 40}"
                         placeholder="请输入内容"
                         id="env"
-                        value="{{$env}}"
+                        value=""
                         name='env'
                     >
                     </el-input>

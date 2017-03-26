@@ -4,9 +4,15 @@
 
 <div class="panel panel-default  ">
     <div class="panel-heading">
-        <h3>
-            @lang('zeus.group-diff-env')
-        </h3>
+        <el-breadcrumb separator="/">
+            <el-breadcrumb-item ><a href="{{route('apps')}}">@lang('zeus.app-list')</a></el-breadcrumb-item>
+            <el-breadcrumb-item>  <a href="{{route('app-view',['id'=>$group->app_id])}}">
+                    {{$group->app->name}}
+                </a></el-breadcrumb-item>
+            <el-breadcrumb-item>@lang('zeus.group-diff-env',['name'=>$group->name])</el-breadcrumb-item>
+
+        </el-breadcrumb>
+
     </div>
     <div class="panel-body">
     <table class="table table-hover table-bordered table-striped">
@@ -48,17 +54,20 @@
         <div class="row">
             <a href="{{route('group-read-env',['id'=>$group->id])}}" class="btn btn-warning">@lang('zeus.group-read-env',['name'=>$group->name])</a>
 
-            <a href="{{route('group-view-env',['id'=>$group->id])}}">
-                @lang('zeus.group-view-env',['name'=>$group->name])
+            <a href="{{route('group-edit-env',['id'=>$group->id])}}" class="">
+                @lang('zeus.group-edit-env',['name'=>$group->name])
             </a>
 
-            <a href="{{route('group-write-remote-env',['id'=>$group->id])}}">
+            <a href="{{route('group-write-remote-env',['id'=>$group->id])}}" class='btn btn-danger'>
                 @lang('zeus.group-write-remote-env',['name'=>$group->name])
             </a>
+
+
+
+
 
         </div>
     </div>
    </div>
-<?php
-var_dump($keys);?>
+
 @endsection
