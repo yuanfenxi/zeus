@@ -40,9 +40,7 @@ class OnlyUser extends RemoteUserMiddleware
             return $this->redirectToServerSide($request);
         }
         $user = RemoteUser::getCurrentUser();
-        if ($user->email != 'xurenlu@glz8.com' ) {
-            return new Response("forbidden");
-        }
+
         return $next($request);
     }
 }
