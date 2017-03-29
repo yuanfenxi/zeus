@@ -93,6 +93,7 @@ class ConfigManager extends Controller
             $group->version = 1;
             $group->codeBase = $_SERVER["HOME"] . "/Sites/codeBase";
             $group->deployPath = "/home/x/htdocs/" . $app->name;
+            $group->hosts = '';
             if (!$group->save()) {
                 throw new DBException;
             }
@@ -103,6 +104,8 @@ class ConfigManager extends Controller
             $groupOnline->version = 1;
             $groupOnline->codeBase = "/home/x/codeBase/";
             $groupOnline->deployPath = "/home/x/htdocs/" . $app->name;
+            $groupOnline
+                ->hosts = '';
             if (!$groupOnline->save()) {
                 throw new DBException;
             }
@@ -114,6 +117,7 @@ class ConfigManager extends Controller
             $groupTesting->codeBase = "/home/x/codeBase/";
             $groupTesting->deployPath = "/home/x/htdocs/" . $app->name;
             $groupTesting->version = 1;
+            $groupTesting->hosts = '';
             if (!$groupTesting->save()) {
                 throw new DBException;
             }
