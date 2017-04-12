@@ -15,6 +15,6 @@ class LogController extends Controller
 
 
     public function index(Request $request){
-        return view("logs.index",['logs'=>CommandLog::paginate(50)]);
+        return view("logs.index",['logs'=>CommandLog::orderBy('id','desc')->paginate(50)]);
     }
 }
