@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\AsRoot;
 use App\Console\Commands\DeployProject;
+use App\Console\Commands\DiskSpace;
 use App\Console\Commands\RollbackProject;
 use App\Console\Commands\Test;
 use App\Console\Commands\UpdateEnv;
@@ -31,7 +32,8 @@ class Kernel extends ConsoleKernel
         UpdateEnv::class,
         WatchEs::class,
         Test::class,
-        AsRoot::class
+        AsRoot::class,
+        DiskSpace::class
     ];
 
     /**
@@ -42,7 +44,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('watch:es')->everyMinute()->withoutOverlapping();         
+         $schedule->command('watch:es')->everyMinute()->withoutOverlapping();
+         $schedule->command('watch:diskSpace')->everyMinute()->withoutOverlapping();
     }
 
     /**
