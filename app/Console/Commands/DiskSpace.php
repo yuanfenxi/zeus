@@ -40,11 +40,11 @@ class DiskSpace extends Command
     public function handle()
     {
         $command = 'df -h / |awk \'{print $5}\'';
-        $spaceAlarm = 70;
+        $spaceAlarm = 90;
         exec($command, $output, $return);
         $space  = substr($output[1], 0, -1);
         if($space > $spaceAlarm){
-            $this->sendMsgToStaff(['zhuyanxia@glz8.com'], "磁盘空间超过".$spaceAlarm."%, 请及时清理");
+            $this->sendMsgToStaff(['kaifa@glz8.com'], "q2服务器磁盘空间超过".$spaceAlarm."%, 请及时清理");
         }
     }
 }
