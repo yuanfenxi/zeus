@@ -29,9 +29,9 @@ class Kernel extends ConsoleKernel
         ZeusMigrate::class,
         ZeusGitPull::class,
         UpdateEnv::class,
-        WatchEs::class,
         Test::class,
-        AsRoot::class
+        AsRoot::class,
+        DiskSpace::class
     ];
 
     /**
@@ -42,7 +42,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        //
+         $schedule->command('watch:diskSpace')->hourly()->withoutOverlapping();
     }
 
     /**
