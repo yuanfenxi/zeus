@@ -42,7 +42,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('watch:es')->everyMinute()->withoutOverlapping();         
+        //
     }
 
     /**
