@@ -11,8 +11,6 @@ namespace App\Console;
 
 class CommandShorts
 {
-    const RE_INIT_SEARCH=2;
     const LS=1;
     const WHO_AM_I=3;
-
 }

@@ -44,19 +44,5 @@ class Test extends Command
     public function handle()
     {
 
-        $text = '
-        //testing
-        q1.glz8.net
-        q2.glz8.net//gogo
-        hell
-        
-        ';
-        print_r(HostHelper::parseHost($text));
-//        Redis::Publish("command:as:root",CommandShorts::WHO_AM_I);
-        Log::error("Testing");
-//        print $this->buildUrl([
-//            'xurenlu@glz8.com',
-//            'qianhui@glz8.com'
-//        ], '测试搜索');
     }
 }

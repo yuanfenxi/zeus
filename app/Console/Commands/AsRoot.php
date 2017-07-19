@@ -18,7 +18,7 @@ class AsRoot extends Command
 
     static $commands = [
         CommandShorts::LS=>"ls",
-        CommandShorts::RE_INIT_SEARCH=>"/home/x/bin/re-init-elastic.sh",
+       
         CommandShorts::WHO_AM_I=>"whoami"
     ];
     /**
