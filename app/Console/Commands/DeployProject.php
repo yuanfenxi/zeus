@@ -9,7 +9,7 @@ use Illuminate\Console\Command;
 
 class DeployProject extends Command
 {
-    /**
+    /*
      * The name and signature of the console command.
      *
      * @var string

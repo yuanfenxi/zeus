@@ -44,7 +44,7 @@ class DiskSpace extends Command
         exec($command, $output, $return);
         $space  = substr($output[1], 0, -1);
         if($space > $spaceAlarm){
-            $this->sendMsgToStaff(['xurenlu@glz8.com','zhuyanxia@glz8.com'], "q2服务器磁盘空间超过".$spaceAlarm."%, 请及时清理");
+            $this->sendMsgToStaff(['xurenlu@glz8.com'], "q2服务器磁盘空间超过" . $spaceAlarm . "%, 请及时清理");
         }
     }
 }

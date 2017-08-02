@@ -41,7 +41,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-         $schedule->command('watch:diskSpace')->hourly()->withoutOverlapping();
+        //$schedule->command('watch:diskSpace')->hourly()->withoutOverlapping();
     }
 
     /**
