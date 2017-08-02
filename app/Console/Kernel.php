@@ -31,7 +31,6 @@ class Kernel extends ConsoleKernel
         UpdateEnv::class,
         Test::class,
         AsRoot::class,
-        DiskSpace::class
     ];
 
     /**
