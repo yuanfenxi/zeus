@@ -10,7 +10,8 @@
         "glz/nvwa-common": "dev-master",
         "frozennode/administrator": "^5.0",
         "predis/predis": "^1.1",
-        "glz/nvwa-common": "dev-master"
+        "glz/nvwa-common": "dev-master",
+        "doctrine/dbal": "^2.6"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
