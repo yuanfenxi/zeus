@@ -26,6 +26,8 @@ $t = 2017031904; ?>
     <div class="col-md-6">
         <div class="pull-right" style="padding-right:1em;">
             <a href="/logs/index">@lang("zeus.logs-index")</a>
+            <?php echo \NvwaCommon\Uic\RemoteUser::getCurrentUser()->name . "(" .
+                \NvwaCommon\Uic\RemoteUser::getCurrentUser()->email . ")"; ?>
         </div>
 
     </div>
