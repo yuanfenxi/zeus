@@ -1,6 +1,6 @@
 <template>
     <div id='footer'>
-        I am <kbd>zeus</kbd>.&nbsp;&nbsp;&nbsp;I am strong,very strong.
+        I am <kbd>zeus</kbd>.&nbsp;&nbsp;&nbsp;Glad to meet u.
     </div>
 </template>
 <style>
