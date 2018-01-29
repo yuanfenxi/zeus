@@ -36,5 +36,7 @@ return [
     'group-diff-env'=>"分组配置对比",
     'remote-server'=>"服务器配置",
     'database-env'=>"数据库中记录的新配置",
-    'group-write-remote-env'=>"推送配置到服务器上"
+    'group-write-remote-env' => "推送配置到服务器上",
+    'node-list' => "节点列表",
+    'create-new-node' => "创建新节点"
 ];

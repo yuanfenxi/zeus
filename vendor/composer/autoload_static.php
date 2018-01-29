@@ -338,6 +338,7 @@ class ComposerStaticInit87877d1f28a3a926eb42628856a102b3
         'CreateAgentCommand' => __DIR__ . '/../..' . '/database/migrations/2017_03_02_141757_CreateAgentCommand.php',
         'CreateApps' => __DIR__ . '/../..' . '/database/migrations/2016_12_10_155933_CreateApps.php',
         'CreateCommandLog' => __DIR__ . '/../..' . '/database/migrations/2017_03_25_173106_CreateCommandLog.php',
+        'CreateNodesTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_29_232901_CreateNodesTable.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTableHost' => __DIR__ . '/../..' . '/database/migrations/2017_03_25_171236_CreateTableHost.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',

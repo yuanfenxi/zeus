@@ -56,3 +56,11 @@ Route::group(['prefix'=>'logs'],function(){
 
     Route::get("/index",'LogController@index');
 });
+
+Route::group(['prefix' => 'node'], function () {
+
+    Route::get("/index", 'NodeController@index')->name("node-index");
+    Route::get("/new", 'NodeController@create')->name("node-create");
+    Route::post("/post", 'NodeController@post')->name("node-post");
+    Route::get("/view/{id}", 'NodeController@view')->name("node-view");
+});

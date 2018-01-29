@@ -11,6 +11,7 @@ return array(
     'CreateAgentCommand' => $baseDir . '/database/migrations/2017_03_02_141757_CreateAgentCommand.php',
     'CreateApps' => $baseDir . '/database/migrations/2016_12_10_155933_CreateApps.php',
     'CreateCommandLog' => $baseDir . '/database/migrations/2017_03_25_173106_CreateCommandLog.php',
+    'CreateNodesTable' => $baseDir . '/database/migrations/2018_01_29_232901_CreateNodesTable.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateTableHost' => $baseDir . '/database/migrations/2017_03_25_171236_CreateTableHost.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
