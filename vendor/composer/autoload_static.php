@@ -333,6 +333,7 @@ class ComposerStaticInit87877d1f28a3a926eb42628856a102b3
     );
 
     public static $classMap = array (
+        'AddDomainNameToGroup' => __DIR__ . '/../..' . '/database/migrations/2018_02_04_172419_AddDomainNameToGroup.php',
         'AddHostsToGroup' => __DIR__ . '/../..' . '/database/migrations/2017_03_18_172151_AddHostsToGroup.php',
         'AddLanguageToAppConfig' => __DIR__ . '/../..' . '/database/migrations/2018_01_29_231726_AddLanguageToAppConfig.php',
         'CreateAgentCommand' => __DIR__ . '/../..' . '/database/migrations/2017_03_02_141757_CreateAgentCommand.php',

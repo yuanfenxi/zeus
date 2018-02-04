@@ -83,7 +83,7 @@ class ConfigManager extends Controller
         try {
             $app = new App();
             $app->name = $request->input("name");
-            $app->git_repo = "";
+            $app->git_repo = "git@git.yuanfenxi.net:koapp/" . $app->name . ".git";
             if (!$app->save()) {
                 throw new DBException;
             }
@@ -91,9 +91,10 @@ class ConfigManager extends Controller
             $group->app_id = $app->id;
             $group->name = "local";
             $group->version = 1;
-            $group->codeBase = $_SERVER["HOME"] . "/Sites/codeBase";
+            $group->codeBase = ($_SERVER["HOME"] ?? "") . "/Sites/codeBase";
             $group->deployPath = "/home/x/htdocs/" . $app->name;
             $group->hosts = '';
+            $group->domainName = $app->name . ".local.z.12zan.net";
             if (!$group->save()) {
                 throw new DBException;
             }
@@ -104,8 +105,8 @@ class ConfigManager extends Controller
             $groupOnline->version = 1;
             $groupOnline->codeBase = "/home/x/codeBase/";
             $groupOnline->deployPath = "/home/x/htdocs/" . $app->name;
-            $groupOnline
-                ->hosts = '';
+            $groupOnline->hosts = '';
+            $groupOnline->domainName = $app->name . ".z.12zan.net";
             if (!$groupOnline->save()) {
                 throw new DBException;
             }
@@ -118,6 +119,7 @@ class ConfigManager extends Controller
             $groupTesting->deployPath = "/home/x/htdocs/" . $app->name;
             $groupTesting->version = 1;
             $groupTesting->hosts = '';
+            $groupTesting->domainName = $app->name . "-test.z.12zan.net";
             if (!$groupTesting->save()) {
                 throw new DBException;
             }

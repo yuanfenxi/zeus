@@ -54,10 +54,10 @@
 
             <div class="form-group{{ $errors->has('colo') ? ' has-error' : '' }}">
                 <label for="colo" class="col-md-4 control-label right-label">
-                    <div>color:</div>
+                    <div>colo:</div>
                 </label>
                 <div class="col-md-6">
-                    <input id="colo" type="text" class="form-control" name="colo" value="{{old('colo')}}">
+                    <input id="colo" type="text" class="form-control" name="colo" value="bj">
                     @if ($errors->has('colo'))
                     <span class="help-block">
                           <strong>{{ $errors->first('colo') }}</strong>

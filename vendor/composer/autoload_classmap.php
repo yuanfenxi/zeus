@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddDomainNameToGroup' => $baseDir . '/database/migrations/2018_02_04_172419_AddDomainNameToGroup.php',
     'AddHostsToGroup' => $baseDir . '/database/migrations/2017_03_18_172151_AddHostsToGroup.php',
     'AddLanguageToAppConfig' => $baseDir . '/database/migrations/2018_01_29_231726_AddLanguageToAppConfig.php',
     'CreateAgentCommand' => $baseDir . '/database/migrations/2017_03_02_141757_CreateAgentCommand.php',

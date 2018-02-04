@@ -77,6 +77,22 @@ q2.example.com//备份机
                 </div>
             </div>
 
+
+            <div class="form-group{{ $errors->has('domainName') ? ' has-error' : '' }}">
+                <label for="domainName" class="col-md-4 control-label right-label">
+                    <div>domainName:</div>
+                </label>
+                <div class="col-md-6">
+                    <input id="domainName" type="text" class="form-control" name="domainName"
+                           value="{{old('domainName')}}">
+                    @if ($errors->has('domainName'))
+                    <span class="help-block">
+                              <strong>{{ $errors->first('domainName') }}</strong>
+                         </span>
+                    @endif
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     <button type="submit" class="btn btn-primary">提交</button>

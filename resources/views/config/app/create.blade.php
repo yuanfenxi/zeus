@@ -27,6 +27,28 @@
                 </div>
             </div>
 
+
+            <div class="form-group{{ $errors->has('language') ? ' has-error' : '' }}">
+                <label for="language" class="col-md-4 control-label right-label">
+                    <div>Language:</div>
+                </label>
+                <div class="col-md-6">
+
+                    <select id="language" class="form-control" name="language">
+                        <optgroup label="Docker">
+                            <option value="php">php</option>
+                            <option value="nodejs">nodejs</option>
+                        </optgroup>
+                    </select>
+                    @if ($errors->has('language'))
+                    <span class="help-block">
+                              <strong>{{ $errors->first('language') }}</strong>
+                         </span>
+                    @endif
+                </div>
+            </div>
+
+
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     <button type="submit" class="btn btn-primary">提交</button>

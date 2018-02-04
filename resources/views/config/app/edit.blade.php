@@ -47,6 +47,20 @@
             </div>
 
 
+            <div class="form-group{{ $errors->has('language') ? ' has-error' : '' }}">
+                <label for="language" class="col-md-4 control-label right-label">
+                    <div>Language:</div>
+                </label>
+                <div class="col-md-6">
+                    <input id="language" type="text" class="form-control" name="language" value="{{old('language')}}">
+                    @if ($errors->has('language'))
+                    <span class="help-block">
+                              <strong>{{ $errors->first('language') }}</strong>
+                         </span>
+                    @endif
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="col-md-6 col-md-offset-4">
                     <el-button type="primary" native-type="submit">提交</el-button>
