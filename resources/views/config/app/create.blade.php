@@ -30,14 +30,18 @@
 
             <div class="form-group{{ $errors->has('language') ? ' has-error' : '' }}">
                 <label for="language" class="col-md-4 control-label right-label">
-                    <div>Language:</div>
+                    <div>Template:</div>
                 </label>
                 <div class="col-md-6">
 
                     <select id="language" class="form-control" name="language">
                         <optgroup label="Docker">
-                            <option value="php">php</option>
+                            <option value="php">php(laravel)</option>
                             <option value="nodejs">nodejs</option>
+                            <option value="ws">ws</option>
+                            <option value="nginx">nginx</option>
+                            <option value="proxy">proxy</option>
+                            <option value="portman">portman</option>
                         </optgroup>
                     </select>
                     @if ($errors->has('language'))

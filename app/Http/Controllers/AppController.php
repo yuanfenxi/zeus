@@ -68,6 +68,19 @@ class AppController extends Controller
             $appInstance->node_id = $nodeId;
             $appInstance->instance_name = "-" . rand(11111, 99999);
             $appInstance->port = $node->decidePort();
+            if ($app->language == "nginx") {
+                $appInstance->port = "80";
+            }
+            if ($app->language == "ws") {
+                $appInstance->port = 4998;
+            }
+            if ($app->language == "proxy") {
+                $appInstance->port = 7788;
+            }
+            if ($app->language == "portman") {
+                $appInstance->port = 7777;
+            }
+
             if (!$appInstance->save()) {
                 throw new DBException("保存失败");
             }
