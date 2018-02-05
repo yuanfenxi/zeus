@@ -12,9 +12,11 @@ class ApiController extends Controller
         $t = time();
         $count = 0;
         $instanceInput = $request->input("instances");
-        $instances = explode("\n", $instanceInput);
+        $instances = explode(",", $instanceInput);
+        $reported = [];
         foreach ($instances as $instance) {
             if (!empty($instance)) {
+                $instance = trim($instance);
                 $appInstance = AppInstance::where("instance_name", $instance)->first();
                 if ($appInstance) {
                     $appInstance->status = "online";
@@ -22,10 +24,11 @@ class ApiController extends Controller
                     if ($appInstance->save()) {
                         $count++;
                     }
+                    $reported[] = $instance;
                 }
             }
         }
 
-        return ["code" => 200, "data" => $count];
+        return ["code" => 200, "data" => $count, "instances" => $reported];
     }
 }
