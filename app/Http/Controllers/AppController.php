@@ -100,4 +100,30 @@ class AppController extends Controller
         }
 
     }
+
+    public function all(Request $request)
+    {
+        $ins = AppInstance::get();
+        return view("config.app.all", ["all" => $ins]);
+    }
+
+    public function startInstance(Request $request)
+    {
+        $instanceId = $request->input("inst_id");
+        $instance = AppInstance::find($instanceId);
+        $appOfPortman = App::where("name", "portman")->first();
+        if (!$appOfPortman) {
+            return $this->redirectWithError($request, "名为portman的实例不存在");
+        }
+        if ($instance) {
+            $node = $instance->node;
+            $portman = AppInstance::where("node_id", $node->id)
+                ->where("app_id", $appOfPortman->id)->first();
+            if (!$portman) {
+                return $this->redirectWithError($request, "该节点上没有portman实例");
+
+            }
+            //$httpClient = new Client
+        }
+    }
 }

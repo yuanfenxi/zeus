@@ -2,8 +2,10 @@
 
 namespace App\Console;
 
+use App\Console\Commands\AddNode;
 use App\Console\Commands\AsRoot;
 use App\Console\Commands\DeployProject;
+use App\Console\Commands\InitApps;
 use App\Console\Commands\RollbackProject;
 use App\Console\Commands\Test;
 use App\Console\Commands\UpdateEnv;
@@ -31,6 +33,8 @@ class Kernel extends ConsoleKernel
         UpdateEnv::class,
         Test::class,
         AsRoot::class,
+        InitApps::class,
+        AddNode::class
     ];
 
     /**

@@ -21,6 +21,13 @@
             @lang("zeus.node-index")
         </a>
 
+        <br/>
+        <br/>
+        <a href="{{route('all-instances')}}" class="btn btn-success">
+            全部实例
+        </a>
+
+
     </div>
 </div>
 

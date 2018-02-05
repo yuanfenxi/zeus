@@ -75,4 +75,10 @@ Route::group(['prefix' => 'app'], function () {
 
 Route::group(["prefix" => "api"], function () {
     Route::get("report/node", 'ApiController@reportDocker');
+    Route::get("node/instances", 'ApiController@instancesOfNode');
+});
+
+Route::group(["prefix" => "board"], function () {
+    Route::get("all/instances", 'AppController@all')->name("all-instances");
+
 });

@@ -21,7 +21,7 @@ class CreateNodesTable extends Migration
             $table->string("colo", 32)->nullable()->default("bj")->comment("是哪个集群");
             $table->bigInteger("minPort")->default(5000)->comment("可以拿来分配的最小端口");
             $table->bigInteger("maxPort")->default(10000)->comment("可以拿来分配的最大端口");
-
+            $table->unique("ip");
         });
     }
 

@@ -26,6 +26,8 @@ class CreateAppInNodesTable extends Migration
             $table->bigInteger("last_check_at")->default(0)->comment("上次检查时间");
             $table->unique(["node_id", "port"]);
         });
+
+
     }
 
     /**
