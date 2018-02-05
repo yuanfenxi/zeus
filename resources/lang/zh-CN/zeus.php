@@ -38,5 +38,9 @@ return [
     'database-env'=>"数据库中记录的新配置",
     'group-write-remote-env' => "推送配置到服务器上",
     'node-list' => "节点列表",
-    'create-new-node' => "创建新节点"
+    'create-new-node' => "创建新节点",
+    'create-new-instance' => "为App创建新的实例",
+    'dashboard' => "控制台",
+    'app-index' => "App列表",
+    'node-index' => "物理机节点列表"
 ];

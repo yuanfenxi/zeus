@@ -10,6 +10,7 @@ return array(
     'AddHostsToGroup' => $baseDir . '/database/migrations/2017_03_18_172151_AddHostsToGroup.php',
     'AddLanguageToAppConfig' => $baseDir . '/database/migrations/2018_01_29_231726_AddLanguageToAppConfig.php',
     'CreateAgentCommand' => $baseDir . '/database/migrations/2017_03_02_141757_CreateAgentCommand.php',
+    'CreateAppInNodesTable' => $baseDir . '/database/migrations/2018_02_04_173332_CreateAppInNodesTable.php',
     'CreateApps' => $baseDir . '/database/migrations/2016_12_10_155933_CreateApps.php',
     'CreateCommandLog' => $baseDir . '/database/migrations/2017_03_25_173106_CreateCommandLog.php',
     'CreateNodesTable' => $baseDir . '/database/migrations/2018_01_29_232901_CreateNodesTable.php',

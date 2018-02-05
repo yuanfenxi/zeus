@@ -337,6 +337,7 @@ class ComposerStaticInit87877d1f28a3a926eb42628856a102b3
         'AddHostsToGroup' => __DIR__ . '/../..' . '/database/migrations/2017_03_18_172151_AddHostsToGroup.php',
         'AddLanguageToAppConfig' => __DIR__ . '/../..' . '/database/migrations/2018_01_29_231726_AddLanguageToAppConfig.php',
         'CreateAgentCommand' => __DIR__ . '/../..' . '/database/migrations/2017_03_02_141757_CreateAgentCommand.php',
+        'CreateAppInNodesTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_04_173332_CreateAppInNodesTable.php',
         'CreateApps' => __DIR__ . '/../..' . '/database/migrations/2016_12_10_155933_CreateApps.php',
         'CreateCommandLog' => __DIR__ . '/../..' . '/database/migrations/2017_03_25_173106_CreateCommandLog.php',
         'CreateNodesTable' => __DIR__ . '/../..' . '/database/migrations/2018_01_29_232901_CreateNodesTable.php',

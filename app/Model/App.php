@@ -9,6 +9,12 @@ class App extends Model
 {
     //
 
+
+    public function instances()
+    {
+        return $this->hasMany('App\AppInstance');
+    }
+
     public function groups()
     {
         return $this->hasMany('App\Model\Group');

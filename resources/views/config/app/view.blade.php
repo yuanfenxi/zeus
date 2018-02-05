@@ -34,6 +34,40 @@
         </table>
 
 
+        <table class="table table-bordered table-striped">
+            <tr>
+                <td colspan="4">
+                    <a href="{{route('create-instance',['appId'=>$app->id])}}" class="btn btn-success  pull-right">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        @lang('zeus.create-new-instance')
+                    </a>
+                </td>
+            </tr>
+            <?php foreach ($app->instances as $instance) { ?>
+                <tr>
+                    <td>
+                        {{ $instance->instance_name }}
+                    </td>
+                    <td>
+                        {{$instance->node->ip}}:
+                        {{$instance->port}}
+                    </td>
+                    <td>
+                        {{$instance->status}}
+                    </td>
+                    <td>
+                        <?php
+                        if ($instance->last_check_at) {
+                            echo date("Y-m-d H:i:s", $instance->last_check_at);
+                        }
+
+                        ?>
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+
+
         <h3>应用分组环境:</h3>
         <table class="table table-striped table-responisve table-bordered table-hover">
             <?php foreach ($app->groups as $group) { ?>

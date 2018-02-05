@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect("/config/apps");
-});
+Route::get('/', 'HomeController@index');
 Route::get("/env/{appName}/{groupName}", 'ConfigManager@appEnv')->name("app-env");
 Route::get("/user", 'ConfigManager@user')->name("user");
 Route::group(["prefix" => "config"], function () {
@@ -63,4 +61,18 @@ Route::group(['prefix' => 'node'], function () {
     Route::get("/new", 'NodeController@create')->name("node-create");
     Route::post("/post", 'NodeController@post')->name("node-post");
     Route::get("/view/{id}", 'NodeController@view')->name("node-view");
+});
+
+Route::group(['prefix' => 'app'], function () {
+
+    Route::get("/create-instance/{appId}", 'AppController@createInstance')->name("create-instance");
+    Route::post("/create-instance-post/{appId}", 'AppController@createInstancePost')->name("create-instance-post");
+    Route::get("/new", 'NodeController@create')->name("node-create");
+    Route::get("/view-instance/{id}", 'AppController@viewInstance')->name("view-instance");
+    Route::post("/post", 'NodeController@post')->name("node-post");
+    Route::get("/view/{id}", 'NodeController@view')->name("node-view");
+});
+
+Route::group(["prefix" => "api"], function () {
+    Route::get("report/node", 'ApiController@reportDocker');
 });
